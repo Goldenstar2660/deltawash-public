@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: handwash-api
+    runtime: python
+    rootDir: dashboard/backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: alembic upgrade head && uvicorn src.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: handwash-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_ALGORITHM
+        value: HS256
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: 1440
+      - key: CORS_ORIGINS
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.11.7
+
+databases:
+  - name: handwash-db
+    plan: free
+    databaseName: handwash

@@ -1,0 +1,57 @@
+# Example operator profile for WHO Steps 2-7 detection
+# Adjust ROI/coor thresholds to match your sink installation before running capture CLI.
+config_version: "example-001"
+resolution:
+  width: 640
+  height: 480
+roi:
+  x: 120
+  y: 80
+  width: 400
+  height: 360
+session:
+  motion_threshold: 0.40
+  relative_motion_threshold: 0.25
+  start_window_frames: 5
+  stop_timeout_ms: 1500
+  min_hands: 2
+  require_motion: true
+steps:
+  STEP_2:
+    duration_ms: 3000
+    confidence_min: 0.60
+  STEP_3:
+    duration_ms: 3000
+    confidence_min: 0.30
+    orientation_hint: RIGHT_OVER_LEFT
+  STEP_4:
+    duration_ms: 3000
+    confidence_min: 0.60
+  STEP_5:
+    duration_ms: 3000
+    confidence_min: 0.60
+  STEP_6:
+    duration_ms: 3000
+    confidence_min: 0.60
+  STEP_7:
+    duration_ms: 3000
+    confidence_min: 0.45
+esp8266:
+  enabled: true
+  host: http://172.20.10.4
+  timeout_ms: 500
+  blink_hz: 1
+video_capture:
+  enabled: false
+  storage_path: /var/tmp/handwash/captures
+  retention_seconds: 0
+  max_sessions: 0
+demo_recording:
+  enabled: false
+  output_path: /var/tmp/handwash/demo_frames
+hand_tracking:
+  max_num_hands: 2
+  model_complexity: 1
+  min_detection_confidence: 0.3
+  min_tracking_confidence: 0.3
+  smoothing_window: 4

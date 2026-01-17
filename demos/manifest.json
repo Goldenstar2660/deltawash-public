@@ -1,0 +1,99 @@
+{
+  "version": "0.1.0",
+  "generated": "2026-01-10",
+  "assets": [
+    {
+      "id": "sample-sequence",
+      "file": "demos/sample_steps.npz",
+      "fps": 24.0,
+      "total_frames": 240,
+      "roi": {"x": 120, "y": 80, "width": 400, "height": 360},
+      "annotations": [
+        {
+          "step_id": "STEP_2",
+          "orientation": "NONE",
+          "start_ms": 0,
+          "end_ms": 3600
+        },
+        {
+          "step_id": "STEP_3",
+          "orientation": "RIGHT_OVER_LEFT",
+          "start_ms": 3800,
+          "end_ms": 7200
+        }
+      ]
+    },
+    {
+      "id": "thumb-variants",
+      "file": "demos/thumb_variants.npz",
+      "fps": 24.0,
+      "total_frames": 200,
+      "roi": {"x": 130, "y": 70, "width": 380, "height": 340},
+      "annotations": [
+        {
+          "step_id": "STEP_6",
+          "orientation": "LEFT_THUMB",
+          "start_ms": 0,
+          "end_ms": 3200
+        },
+        {
+          "step_id": "STEP_6",
+          "orientation": "RIGHT_THUMB",
+          "start_ms": 3500,
+          "end_ms": 6600
+        },
+        {
+          "step_id": "STEP_7",
+          "orientation": "LEFT_FINGERTIPS",
+          "start_ms": 7000,
+          "end_ms": 9800
+        }
+      ]
+    },
+    {
+      "id": "multi-step-canonical",
+      "file": "demos/multistep_mix.npz",
+      "fps": 24.0,
+      "total_frames": 455,
+      "roi": {"x": 110, "y": 60, "width": 420, "height": 360},
+      "annotations": [
+        {
+          "step_id": "STEP_2",
+          "orientation": "NONE",
+          "start_ms": 0,
+          "end_ms": 3000
+        },
+        {
+          "step_id": "STEP_3",
+          "orientation": "LEFT_OVER_RIGHT",
+          "start_ms": 3200,
+          "end_ms": 6200
+        },
+        {
+          "step_id": "STEP_4",
+          "orientation": "NONE",
+          "start_ms": 6400,
+          "end_ms": 9400
+        },
+        {
+          "step_id": "STEP_5",
+          "orientation": "NONE",
+          "start_ms": 9600,
+          "end_ms": 12600
+        },
+        {
+          "step_id": "STEP_6",
+          "orientation": "RIGHT_THUMB",
+          "start_ms": 12800,
+          "end_ms": 15800
+        },
+        {
+          "step_id": "STEP_7",
+          "orientation": "RIGHT_FINGERTIPS",
+          "start_ms": 16000,
+          "end_ms": 19000
+        }
+      ]
+    }
+  ]
+}

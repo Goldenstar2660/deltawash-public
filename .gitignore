@@ -1,0 +1,133 @@
+####################################
+# VS Code
+####################################
+.vscode/*
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+####################################
+# OS / Editor junk
+####################################
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+
+####################################
+# Logs & runtime artifacts
+####################################
+*.log
+logs/
+tmp/
+temp/
+captures/
+demo_frames/
+
+####################################
+# Python
+####################################
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments (uv / venv)
+.venv/
+.venv-py311/
+venv/
+env/
+ENV/
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+
+####################################
+# Node / JavaScript / TypeScript
+####################################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+dist/
+build/
+.out/
+.next/
+.cache/
+
+####################################
+# .NET / C#
+####################################
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+####################################
+# Embedded / Hardware (ESP8266, Arduino, PlatformIO)
+####################################
+.pio/
+.pioenvs/
+.piolibdeps/
+*.elf
+*.hex
+*.bin
+
+####################################
+# Raspberry Pi / Linux
+####################################
+*.service~
+*.bak
+.cache/
+.config/
+
+####################################
+# Secrets & environment variables
+####################################
+.env
+.env.*
+!.env.example
+
+####################################
+# Testing / coverage
+####################################
+coverage/
+.nyc_output/
+
+####################################
+# Misc
+####################################
+*.tmp
+*.orig
+
+step1/
+step2/
+step3/
+step4/
+step5/
+step6/
+step7/
+free-react-tailwind-admin-dashboard-main/
+my_video.mp4
+Dorsum/
+Palm/
+.pytest_cache/
+recordings/
+scripts/
+lstm_model.pth
+!assets/models/lstm_model.pth
+pytest.ini
+test_cam.py
+!tools/pi/test_cam.py
+.specify/
+specs/
+training_data_old/

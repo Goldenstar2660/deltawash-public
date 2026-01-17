@@ -1,0 +1,465 @@
+/**
+ * Common component styles - TailAdmin Reference Design
+ * Shared UI elements matching admin dashboard styling
+ */
+
+/* ==========================================================================
+   BADGE - TailAdmin Style
+   ========================================================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-0-5) var(--space-2);
+  font-size: var(--text-theme-xs);
+  font-weight: var(--font-medium);
+  line-height: 1.5;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.badge-success {
+  color: var(--color-success-700);
+  background-color: var(--color-success-50);
+}
+
+.badge-danger {
+  color: var(--color-error-700);
+  background-color: var(--color-error-50);
+}
+
+.badge-warning {
+  color: var(--color-warning-700);
+  background-color: var(--color-warning-50);
+}
+
+.badge-info {
+  color: var(--color-brand-700);
+  background-color: var(--color-brand-50);
+}
+
+.badge-neutral {
+  color: var(--color-gray-700);
+  background-color: var(--color-gray-100);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   INFO CARD - TailAdmin Style
+   ========================================================================== */
+
+.info-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 1rem;
+  padding: var(--space-5);
+}
+
+@media (min-width: 768px) {
+  .info-card {
+    padding: var(--space-6);
+  }
+}
+
+.info-card h3 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-gray-800);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.info-label {
+  font-size: var(--text-theme-xs);
+  font-weight: var(--font-medium);
+  color: var(--color-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.info-value {
+  font-size: var(--text-theme-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-gray-800);
+}
+
+.info-value.mono {
+  font-family: var(--font-mono);
+}
+
+.info-value.large {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+}
+
+/* ==========================================================================
+   METRIC CARD - TailAdmin Style
+   ========================================================================== */
+
+.metric-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 1rem;
+  padding: var(--space-5);
+  transition: all var(--transition-fast);
+}
+
+@media (min-width: 768px) {
+  .metric-card {
+    padding: var(--space-6);
+  }
+}
+
+.metric-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-xl);
+  background: var(--color-gray-100);
+}
+
+.metric-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-800);
+}
+
+.metric-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.metric-label {
+  font-size: var(--text-theme-sm);
+  font-weight: var(--font-normal);
+  color: var(--color-gray-500);
+  margin: var(--space-5) 0 0 0;
+}
+
+.metric-value {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+}
+
+.metric-value .value {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-gray-800);
+  line-height: 1;
+}
+
+.metric-value .unit {
+  font-size: var(--text-theme-sm);
+  font-weight: var(--font-normal);
+  color: var(--color-gray-500);
+}
+
+.metric-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-theme-xs);
+  font-weight: var(--font-medium);
+  padding: var(--space-0-5) var(--space-2);
+  border-radius: var(--radius-full);
+  width: fit-content;
+  margin-top: var(--space-3);
+}
+
+.metric-trend.positive {
+  color: var(--color-success-600);
+  background: var(--color-success-50);
+}
+
+.metric-trend.negative {
+  color: var(--color-error-600);
+  background: var(--color-error-50);
+}
+
+.metric-trend .trend-indicator {
+  font-size: var(--text-theme-xs);
+}
+
+/* ==========================================================================
+   LOADER - TailAdmin Style
+   ========================================================================== */
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-10);
+}
+
+.loader-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-gray-200);
+  border-top-color: var(--color-brand-500);
+  border-radius: 50%;
+  animation: loader-spin 1s linear infinite;
+}
+
+@keyframes loader-spin {
+  to { transform: rotate(360deg); }
+}
+
+.loader-text {
+  margin-top: var(--space-3);
+  font-size: var(--text-theme-sm);
+  color: var(--color-gray-500);
+}
+
+/* ==========================================================================
+   ERROR MESSAGE - TailAdmin Style
+   ========================================================================== */
+
+.error-message {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--color-error-50);
+  border: 1px solid var(--color-error-100);
+  border-radius: var(--radius-lg);
+  color: var(--color-error-600);
+}
+
+.error-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.error-content {
+  flex: 1;
+}
+
+.error-title {
+  font-size: var(--text-theme-sm);
+  font-weight: var(--font-semibold);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.error-description {
+  font-size: var(--text-theme-sm);
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   STATUS BADGE - TailAdmin Style
+   ========================================================================== */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  padding: var(--space-0-5) var(--space-2-5);
+  font-size: var(--text-theme-xs);
+  font-weight: var(--font-medium);
+  border-radius: var(--radius-full);
+  text-transform: capitalize;
+}
+
+.status-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.status-badge.online {
+  color: var(--color-success-600);
+  background: var(--color-success-50);
+}
+
+.status-badge.offline {
+  color: var(--color-gray-500);
+  background: var(--color-gray-100);
+}
+
+.status-badge.warning {
+  color: var(--color-warning-600);
+  background: var(--color-warning-50);
+}
+
+.status-badge.error {
+  color: var(--color-error-600);
+  background: var(--color-error-50);
+}
+
+/* ==========================================================================
+   BUTTONS - TailAdmin Style
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2-5) var(--space-4);
+  font-size: var(--text-theme-sm);
+  font-weight: var(--font-medium);
+  line-height: 1.25rem;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--color-brand-500);
+  color: white;
+  border-color: var(--color-brand-500);
+  box-shadow: var(--shadow-theme-xs);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--color-brand-600);
+  border-color: var(--color-brand-600);
+}
+
+.btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-gray-700);
+  border-color: var(--color-gray-300);
+  box-shadow: var(--shadow-theme-xs);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--color-gray-50);
+  color: var(--color-gray-800);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-gray-500);
+  border-color: transparent;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: var(--color-gray-100);
+  color: var(--color-gray-700);
+}
+
+.btn-sm {
+  padding: var(--space-1-5) var(--space-3);
+  font-size: var(--text-theme-xs);
+}
+
+.btn-lg {
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--text-base);
+}
+
+/* ==========================================================================
+   SECTION CONTAINERS - TailAdmin Style
+   ========================================================================== */
+
+.section {
+  background: var(--color-surface);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 1rem;
+  padding: var(--space-5);
+}
+
+@media (min-width: 640px) {
+  .section {
+    padding: var(--space-6);
+  }
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-5);
+  gap: var(--space-4);
+}
+
+.section-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-gray-800);
+  margin: 0;
+}
+
+.section-subtitle {
+  font-size: var(--text-theme-sm);
+  color: var(--color-gray-500);
+  margin: var(--space-1) 0 0 0;
+}
+
+/* ==========================================================================
+   EMPTY STATES - TailAdmin Style
+   ========================================================================== */
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  padding: var(--space-8);
+  text-align: center;
+}
+
+.empty-state-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--space-4);
+  color: var(--color-gray-300);
+}
+
+.empty-state-title {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--color-gray-800);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.empty-state-description {
+  font-size: var(--text-theme-sm);
+  color: var(--color-gray-500);
+  margin: 0;
+  max-width: 300px;
+}

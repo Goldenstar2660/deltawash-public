@@ -1,0 +1,58 @@
+services:
+  db:
+    image: postgres:16
+    container_name: deltawash-dashboard-db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-deltawash_dashboard}
+      POSTGRES_USER: ${POSTGRES_USER:-dashboard_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-dashboard_password}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-dashboard_user} -d ${POSTGRES_DB:-deltawash_dashboard}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./dashboard/backend
+      dockerfile: Dockerfile
+    container_name: deltawash-dashboard-backend
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql://dashboard_user:dashboard_password@db:5432/deltawash_dashboard}
+      JWT_SECRET: ${JWT_SECRET:-your-secret-key-change-in-production}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5173,http://172.20.10.3:5173,http://localhost:3000}
+      POSTGRES_DB: ${POSTGRES_DB:-deltawash_dashboard}
+      POSTGRES_USER: ${POSTGRES_USER:-dashboard_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-dashboard_password}
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./dashboard/backend:/app
+      - ./assets:/assets
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
+
+  frontend:
+    build:
+      context: ./dashboard/frontend
+      dockerfile: Dockerfile
+    container_name: deltawash-dashboard-frontend
+    environment:
+      VITE_API_BASE_URL: ${VITE_API_BASE_URL:-http://localhost:8000}
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    volumes:
+      - ./dashboard/frontend:/app
+      - /app/node_modules
+    command: npm run dev -- --host 0.0.0.0
+
+volumes:
+  postgres_data:

@@ -1,0 +1,289 @@
+/**
+ * DevicePage styles - TailAdmin Reference Design
+ * Individual device analytics with professional styling
+ */
+
+/* ==========================================================================
+   PAGE LAYOUT
+   ========================================================================== */
+
+.device-page {
+  min-height: 100vh;
+  background-color: var(--color-gray-50);
+}
+
+/* ==========================================================================
+   CONTENT SECTIONS - TailAdmin Style
+   ========================================================================== */
+
+.content-section {
+  margin-bottom: var(--space-6);
+}
+
+.content-section .section-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-gray-800);
+  margin-bottom: var(--space-4);
+}
+
+/* ==========================================================================
+   INFO CARD - TailAdmin Style
+   ========================================================================== */
+
+.info-card {
+  background: var(--color-surface);
+  border-radius: 1rem;
+  border: 1px solid var(--color-gray-200);
+  padding: var(--space-5);
+}
+
+@media (min-width: 640px) {
+  .info-card {
+    padding: var(--space-6);
+  }
+}
+
+.info-card h3 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-gray-800);
+  margin-bottom: var(--space-4);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.info-label {
+  font-size: var(--text-theme-sm);
+  color: var(--color-gray-500);
+}
+
+.info-value {
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  color: var(--color-gray-800);
+}
+
+.info-value.large {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+}
+
+.info-value.mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-theme-sm);
+  color: var(--color-gray-600);
+}
+
+/* ==========================================================================
+   MISSED STEP CARD - TailAdmin Style
+   ========================================================================== */
+
+.missed-step-card {
+  background: var(--color-surface);
+  border-radius: 1rem;
+  border: 1px solid var(--color-gray-200);
+  padding: var(--space-5);
+}
+
+@media (min-width: 640px) {
+  .missed-step-card {
+    padding: var(--space-6);
+  }
+}
+
+.missed-step-card h3 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-gray-800);
+  margin-bottom: var(--space-4);
+}
+
+.missed-step-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.missed-step-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.missed-step-label {
+  font-size: var(--text-theme-sm);
+  color: var(--color-gray-500);
+}
+
+.missed-step-name {
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  color: var(--color-gray-800);
+}
+
+.missed-step-stats {
+  text-align: right;
+}
+
+.miss-rate {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-error-500);
+  font-family: var(--font-mono);
+}
+
+.miss-count {
+  font-size: var(--text-theme-sm);
+  color: var(--color-gray-500);
+}
+
+/* ==========================================================================
+   LOADING & ERROR STATES - TailAdmin Style
+   ========================================================================== */
+
+.device-page .empty-state,
+.device-page .loading-state {
+  margin: 0;
+}
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: var(--space-10);
+  text-align: center;
+  background: var(--color-surface);
+  border-radius: 1rem;
+  border: 1px solid var(--color-gray-200);
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-gray-200);
+  border-top-color: var(--color-brand-500);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: var(--space-4);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-state p {
+  font-size: var(--text-theme-sm);
+  color: var(--color-gray-500);
+}
+
+/* ==========================================================================
+   SESSION LIST - TailAdmin Style
+   ========================================================================== */
+
+.session-list-section {
+  margin-top: var(--space-6);
+}
+
+.session-list-section h3 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-gray-800);
+  margin-bottom: var(--space-4);
+}
+
+.session-list {
+  background: var(--color-surface);
+  border-radius: 1rem;
+  border: 1px solid var(--color-gray-200);
+  overflow: hidden;
+}
+
+.session-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-gray-100);
+  transition: background-color var(--transition-fast);
+}
+
+.session-item:last-child {
+  border-bottom: none;
+}
+
+.session-item:hover {
+  background: var(--color-gray-50);
+}
+
+.session-time {
+  font-size: var(--text-theme-sm);
+  color: var(--color-gray-800);
+  font-weight: var(--font-medium);
+}
+
+.session-duration {
+  font-size: var(--text-theme-xs);
+  color: var(--color-gray-500);
+  background: var(--color-gray-100);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-full);
+}
+
+.session-steps {
+  display: flex;
+  gap: var(--space-0-5);
+}
+
+.step-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-gray-200);
+}
+
+.step-indicator.completed {
+  background: var(--color-success-500);
+}
+
+.step-indicator.partial {
+  background: var(--color-warning-500);
+}
+
+.step-indicator.missed {
+  background: var(--color-error-500);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .missed-step-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .missed-step-stats {
+    text-align: left;
+  }
+}

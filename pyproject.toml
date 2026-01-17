@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=66.1.1", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deltawash-pi"
+version = "0.1.0"
+description = "Handwash compliance demo pipeline (WHO steps 2-7)."
+readme = "specs/001-handwash-compliance/quickstart.md"
+requires-python = ">=3.11"
+dependencies = [
+  "opencv-python>=4.9.0.80",
+  "numpy>=1.26.0",
+  "torch>=2.0.0",
+  "torchvision>=0.15.0",
+  "pillow>=10.0.0",
+  "requests>=2.31.0",
+  "pyyaml>=6.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"deltawash_pi.ml" = ["*.pth"]
+
+[project.scripts]
+deltawash-capture = "deltawash_pi.cli.capture:main"

@@ -1,0 +1,214 @@
+/**
+ * Chart component styles - TailAdmin Reference Design
+ * Professional chart containers matching admin dashboard styling
+ */
+
+/* ==========================================================================
+   CHART CONTAINER - TailAdmin Style
+   ========================================================================== */
+
+.chart-container {
+  background: var(--color-surface);
+  border-radius: 1rem;
+  padding: var(--space-5);
+  border: 1px solid var(--color-gray-200);
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .chart-container {
+    padding: var(--space-5) var(--space-6);
+  }
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.chart-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-gray-800);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.chart-subtitle {
+  font-size: var(--text-theme-sm);
+  color: var(--color-gray-500);
+  margin-top: var(--space-1);
+}
+
+.chart-actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.chart-action-btn {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  color: var(--color-gray-500);
+  font-size: var(--text-theme-sm);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-theme-xs);
+}
+
+.chart-action-btn:hover {
+  background: var(--color-gray-50);
+  border-color: var(--color-gray-200);
+  color: var(--color-gray-700);
+}
+
+/* ==========================================================================
+   RECHARTS CUSTOMIZATION - TailAdmin Colors
+   ========================================================================== */
+
+.recharts-wrapper {
+  font-family: var(--font-outfit);
+}
+
+.recharts-cartesian-axis-tick {
+  font-size: var(--text-theme-xs);
+}
+
+.recharts-cartesian-axis-tick-value {
+  fill: var(--color-gray-500);
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: var(--color-gray-100);
+}
+
+.recharts-legend-wrapper {
+  font-size: var(--text-theme-sm);
+  padding-top: var(--space-4);
+}
+
+.recharts-legend-item-text {
+  color: var(--color-gray-500) !important;
+}
+
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+
+.recharts-default-tooltip {
+  background-color: var(--color-surface) !important;
+  border: 1px solid var(--color-gray-200) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-theme-sm) !important;
+  padding: var(--space-3) !important;
+}
+
+.recharts-tooltip-label {
+  font-weight: var(--font-medium) !important;
+  color: var(--color-gray-800) !important;
+  font-size: var(--text-theme-xs) !important;
+  margin-bottom: var(--space-1) !important;
+}
+
+.recharts-tooltip-item {
+  color: var(--color-gray-700) !important;
+  font-size: var(--text-theme-sm) !important;
+  padding: var(--space-0-5) 0 !important;
+}
+
+.recharts-tooltip-item-name {
+  color: var(--color-gray-500) !important;
+}
+
+.recharts-tooltip-item-value {
+  font-weight: var(--font-medium) !important;
+}
+
+/* ==========================================================================
+   DEVICE STATUS BADGE - TailAdmin Style
+   ========================================================================== */
+
+.device-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  padding: var(--space-0-5) var(--space-2-5);
+  border-radius: var(--radius-full);
+  font-weight: var(--font-medium);
+  font-size: var(--text-theme-xs);
+}
+
+.device-status-badge.online {
+  background-color: var(--color-success-50);
+  color: var(--color-success-600);
+}
+
+.device-status-badge.offline {
+  background-color: var(--color-error-50);
+  color: var(--color-error-600);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.device-status-badge.online .status-dot {
+  background-color: var(--color-success-500);
+}
+
+.device-status-badge.offline .status-dot {
+  background-color: var(--color-error-500);
+}
+
+/* Size variants */
+.badge-small {
+  padding: var(--space-0-5) var(--space-2);
+  font-size: 10px;
+}
+
+.badge-small .status-dot {
+  width: 5px;
+  height: 5px;
+}
+
+.badge-medium {
+  padding: var(--space-1) var(--space-2-5);
+  font-size: var(--text-theme-xs);
+}
+
+.badge-large {
+  padding: var(--space-1-5) var(--space-3);
+  font-size: var(--text-theme-sm);
+}
+
+.badge-large .status-dot {
+  width: 8px;
+  height: 8px;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .chart-container {
+    padding: var(--space-4);
+  }
+
+  .chart-title {
+    font-size: var(--text-base);
+  }
+  
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+}

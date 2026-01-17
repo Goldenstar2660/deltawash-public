@@ -1,0 +1,266 @@
+/**
+ * DeviceLeaderboard styles - TailAdmin Reference Design
+ * Professional ranking table matching admin dashboard styling
+ */
+
+.device-leaderboard {
+  background: var(--color-surface);
+  border-radius: 1rem;
+  border: 1px solid var(--color-gray-200);
+  overflow: hidden;
+}
+
+.device-leaderboard h3 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-gray-800);
+  padding: var(--space-4) var(--space-5);
+  margin: 0;
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+@media (min-width: 640px) {
+  .device-leaderboard h3 {
+    padding: var(--space-5) var(--space-6);
+  }
+}
+
+.device-leaderboard.empty {
+  padding: var(--space-10);
+  text-align: center;
+}
+
+.device-leaderboard.empty p {
+  color: var(--color-gray-500);
+  font-size: var(--text-theme-sm);
+}
+
+/* ==========================================================================
+   LEADERBOARD TABLE - TailAdmin Style
+   ========================================================================== */
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leaderboard-table thead {
+  background-color: var(--color-gray-50);
+  border-bottom: 1px solid var(--color-gray-100);
+  border-top: 1px solid var(--color-gray-100);
+}
+
+.leaderboard-table th {
+  padding: var(--space-3) var(--space-5);
+  text-align: left;
+  font-size: var(--text-theme-xs);
+  font-weight: var(--font-medium);
+  color: var(--color-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 640px) {
+  .leaderboard-table th {
+    padding: var(--space-3) var(--space-6);
+  }
+}
+
+.leaderboard-table tbody tr {
+  border-bottom: 1px solid var(--color-gray-100);
+  transition: background-color var(--transition-fast);
+}
+
+.leaderboard-table tbody tr:hover {
+  background-color: var(--color-gray-25);
+}
+
+.leaderboard-table tbody tr.clickable {
+  cursor: pointer;
+}
+
+.leaderboard-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.leaderboard-table td {
+  padding: var(--space-3) var(--space-5);
+  font-size: var(--text-theme-sm);
+  color: var(--color-gray-700);
+  vertical-align: middle;
+}
+
+@media (min-width: 640px) {
+  .leaderboard-table td {
+    padding: var(--space-3) var(--space-6);
+  }
+}
+
+/* Column widths */
+.rank-column {
+  width: 70px;
+  text-align: center;
+}
+
+.device-column {
+  min-width: 150px;
+}
+
+.compliance-column {
+  min-width: 200px;
+}
+
+.sessions-column,
+.compliant-column {
+  width: 100px;
+  text-align: right;
+  font-family: var(--font-mono);
+  color: var(--color-gray-500);
+}
+
+/* ==========================================================================
+   RANK BADGES - TailAdmin Style
+   ========================================================================== */
+
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-theme-sm);
+  font-weight: var(--font-semibold);
+  background: var(--color-gray-100);
+  color: var(--color-gray-700);
+}
+
+.rank-badge.gold {
+  background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+  color: #92400E;
+  box-shadow: 0 2px 4px rgba(251, 191, 36, 0.3);
+}
+
+.rank-badge.silver {
+  background: linear-gradient(135deg, #F3F4F6, #E5E7EB);
+  color: #374151;
+  box-shadow: 0 2px 4px rgba(156, 163, 175, 0.3);
+}
+
+.rank-badge.bronze {
+  background: linear-gradient(135deg, #FED7AA, #FDBA74);
+  color: #9A3412;
+  box-shadow: 0 2px 4px rgba(251, 146, 60, 0.3);
+}
+
+/* ==========================================================================
+   DEVICE NAME - TailAdmin Style
+   ========================================================================== */
+
+.device-name {
+  font-weight: var(--font-medium);
+  color: var(--color-gray-800);
+}
+
+.clickable .device-name {
+  color: var(--color-brand-500);
+}
+
+.clickable:hover .device-name {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   COMPLIANCE CELL - TailAdmin Style
+   ========================================================================== */
+
+.compliance-cell {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.compliance-rate {
+  font-family: var(--font-mono);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-theme-sm);
+}
+
+.compliance-rate.compliance-excellent {
+  color: var(--color-success-600);
+}
+
+.compliance-rate.compliance-good {
+  color: var(--color-success-500);
+}
+
+.compliance-rate.compliance-fair {
+  color: var(--color-warning-600);
+}
+
+.compliance-rate.compliance-poor {
+  color: var(--color-error-600);
+}
+
+/* Compliance Bar */
+.compliance-bar-container {
+  width: 100%;
+  height: 6px;
+  background: var(--color-gray-100);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.compliance-bar {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow);
+}
+
+.compliance-bar.compliance-excellent {
+  background: linear-gradient(90deg, var(--color-success-500), #34D399);
+}
+
+.compliance-bar.compliance-good {
+  background: linear-gradient(90deg, var(--color-success-500), #6EE7B7);
+}
+
+.compliance-bar.compliance-fair {
+  background: linear-gradient(90deg, var(--color-warning-500), #FCD34D);
+}
+
+.compliance-bar.compliance-poor {
+  background: linear-gradient(90deg, var(--color-error-500), #FCA5A5);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .device-leaderboard h3 {
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-base);
+  }
+  
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-theme-xs);
+  }
+  
+  .rank-badge {
+    width: 28px;
+    height: 28px;
+    font-size: var(--text-theme-xs);
+  }
+  
+  .compliance-bar-container {
+    height: 4px;
+  }
+  
+  /* Hide less important columns on mobile */
+  .compliant-column {
+    display: none;
+  }
+}
