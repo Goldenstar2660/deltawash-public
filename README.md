@@ -19,6 +19,7 @@ The goal is to improve hand hygiene compliance by replacing guesswork with **cle
 Handwashing is the most effective way to prevent healthcare-associated infections, yet compliance remains inconsistent:
 
 * Average handwashing compliance:
+
   * Nurses: ~75%
   * Doctors: ~63%
 * Up to 15% of hospitalized patients in middle-income countries acquire a healthcare-associated infection
@@ -39,6 +40,7 @@ Most failures are not due to negligence, but to **incomplete technique** and lac
 ### Immediate User Feedback
 
 * LED indicators near the sink show live progress
+
   * Blinking LED: step in progress
   * Solid LED: step completed successfully
 * Removes ambiguity about when a step is “done”
@@ -47,6 +49,7 @@ Most failures are not due to negligence, but to **incomplete technique** and lac
 
 * Session results are sent to a central dashboard
 * Supports:
+
   * Live compliance monitoring
   * Identification of commonly missed steps
   * Long-term trend analysis across devices or units
