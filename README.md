@@ -39,7 +39,6 @@ Most failures are not due to negligence, but to **incomplete technique** and lac
 ### Immediate User Feedback
 
 * LED indicators near the sink show live progress
-
   * Blinking LED: step in progress
   * Solid LED: step completed successfully
 * Removes ambiguity about when a step is “done”
@@ -48,7 +47,6 @@ Most failures are not due to negligence, but to **incomplete technique** and lac
 
 * Session results are sent to a central dashboard
 * Supports:
-
   * Live compliance monitoring
   * Identification of commonly missed steps
   * Long-term trend analysis across devices or units
@@ -74,23 +72,19 @@ These motions are often referred to as **WHO steps 2–7**, but the system does 
 ## System Architecture
 
 1. **Raspberry Pi + Camera**
-
    * Captures handwashing sessions
    * Runs all vision and inference locally
 
 2. **On-Device ML Pipeline**
-
    * MediaPipe Hands for hand landmark detection
    * CNN + LSTM ensemble for motion classification
    * Real-time session state tracking
 
 3. **Feedback Controller**
-
    * ESP8266 receives step status over WiFi
    * Drives LED indicators for user feedback
 
 4. **Web Dashboard**
-
    * Receives summarized session data
    * Displays compliance statistics and trends
 
